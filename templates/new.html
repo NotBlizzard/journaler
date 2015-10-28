@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New</title	
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">	
+</head>
+<body>
+<ul id='header'>
+	<li><a href="/logout">Logout</a></li>
+	<li><a href="/new">New Entry</a></li>
+</ul>
+<center>
+<form method="POST" action="/new">
+	<textarea name='content' id='entry-input-box'></textarea>
+	<input type='submit' id='entry-submit-button'>
+</center>
+</form>
+</body>
+</html>

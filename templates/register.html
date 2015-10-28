@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+{% if error %}
+	<div class='error'>
+		<p>{{ error }}</p>
+	</div>
+{% endif %}
+<form method="POST" action="/register">
+	<input name='username'>
+	<input type='password' name='password'>
+	<input type='submit'>
+</form>
+</body>
+</html>

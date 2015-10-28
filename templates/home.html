@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<center>
+<ul id='header'>
+	<li><a href="/logout">Logout</a></li>
+	<li><a href="/new">New Entry</a></li>
+</ul>
+{% if posts %}
+	{% for x in posts | reverse %}
+		<small id='date'>{{ x['date'] }}</small>
+		<br />
+		<a id='entry-link' href="{{ x['_id'] }}">{{ x['content'] | truncate(10) }}</a>
+		<br />
+	{% endfor %}
+{% else %}
+	<h2>No Entries!</h2>
+{% endif %}
+</center>
+</body>
+</html>

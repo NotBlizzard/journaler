@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<ul id='header'>
+	<li><a href="/logout">Logout</a></li>
+	<li><a href="/new">New Entry</a></li>
+</ul>
+{% if error %}
+	<div class='error'>
+		<p>{{ error }}</p>
+	</div>
+{% else %}
+	<center>
+	<small id='date'>{{ post['date'] }}</small>
+	<br />
+	<article id='entry'>{{ post['content'] }}</article>
+	</center>
+{% endif %}
+</body>
+</html>
